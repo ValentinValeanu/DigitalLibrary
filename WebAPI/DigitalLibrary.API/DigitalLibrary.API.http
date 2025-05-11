@@ -1,6 +1,6 @@
 @DigitalLibrary.API_HostAddress = http://localhost:5193
 
-GET {{DigitalLibrary.API_HostAddress}}/weatherforecast/
+GET {{DigitalLibrary.API_HostAddress}}/api/books
 Accept: application/json
 
 ###
