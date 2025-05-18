@@ -1,17 +1,25 @@
-﻿using DigitalLibrary.Models;
+﻿using DigitalLibrary.Data;
+using DigitalLibrary.Models.DTOs;
 using DigitalLibrary.Services.Interfaces;
 
 namespace DigitalLibrary.Services
 {
     public class BooksService : IBooksService
     {
-        public IEnumerable<Book> GetBooks()
+        public Task<List<Book>> GetBooksAsync()
         {
-            return new List<Book>
-            {
-                new Book { Name = "1984", Author = "George Orwell", LaunchDate = new DateTime(1949, 6, 8) },
-                new Book { Name = "Animal Farm", Author = "George Orwell", LaunchDate = new DateTime(1945, 8, 17) }
-            };
+            return Task.FromResult(Database.Books);
+        }
+
+        public Task<Book?> GetBookAsync(int id)
+        {
+            return Task.FromResult(Database.Books.FirstOrDefault(b => b.Id == id));
+        }
+
+
+        public Task DeleteBookAsync(Book book)
+        {
+            return Task.FromResult(Database.Books.Remove(book));
         }
     }
 }

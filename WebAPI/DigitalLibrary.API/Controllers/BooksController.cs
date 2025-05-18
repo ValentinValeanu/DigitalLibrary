@@ -1,4 +1,4 @@
-using DigitalLibrary.Models;
+using DigitalLibrary.Models.DTOs;
 using DigitalLibrary.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,9 +19,34 @@ namespace DigitalLibrary.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Book> GetBooks()
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            return this.booksService.GetBooks();
+            var books = await this.booksService.GetBooksAsync();
+
+            return Ok(books);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Book>> GetBook(int id)
+        {
+            var book = await this.booksService.GetBookAsync(id);
+
+            return book == null ? NotFound() : Ok(book);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Book>> DeleteBook(int id)
+        {
+            var book = await this.booksService.GetBookAsync(id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            await this.booksService.DeleteBookAsync(book);
+
+            return NoContent();
         }
     }
 }

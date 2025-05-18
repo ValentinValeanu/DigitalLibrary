@@ -1,10 +1,13 @@
-﻿
-using DigitalLibrary.Models;
+﻿using DigitalLibrary.Models.DTOs;
 
 namespace DigitalLibrary.Services.Interfaces
 {
     public interface IBooksService
     {
-        public IEnumerable<Book> GetBooks();
+        public Task<List<Book>> GetBooksAsync();
+
+        public Task<Book?> GetBookAsync(int id);
+
+        public Task DeleteBookAsync(Book book);
     }
 }

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalLibrary.Models\DigitalLibrary.Models.csproj" />
+  </ItemGroup>
+
 </Project>
