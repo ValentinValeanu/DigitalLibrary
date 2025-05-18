@@ -34,6 +34,14 @@ namespace DigitalLibrary.API.Controllers
             return book == null ? NotFound() : Ok(book);
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Book>> AddBook(BookInput book)
+        {
+            var addedBook = await this.booksService.AddBookAsync(book);
+
+            return Ok(addedBook);
+        }
+
         [HttpDelete("{id}")]
         public async Task<ActionResult<Book>> DeleteBook(int id)
         {

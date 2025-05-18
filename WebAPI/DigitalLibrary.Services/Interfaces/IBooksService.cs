@@ -8,6 +8,8 @@ namespace DigitalLibrary.Services.Interfaces
 
         public Task<Book?> GetBookAsync(int id);
 
+        public Task<Book> AddBookAsync(BookInput book);
+
         public Task DeleteBookAsync(Book book);
     }
 }
