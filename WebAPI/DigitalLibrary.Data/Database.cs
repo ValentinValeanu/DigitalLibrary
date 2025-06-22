@@ -1,4 +1,4 @@
-﻿using DigitalLibrary.Models.DTOs;
+﻿using DigitalLibrary.Data.Entities;
 
 namespace DigitalLibrary.Data
 {
@@ -7,8 +7,7 @@ namespace DigitalLibrary.Data
         public static List<Book> Books = new List<Book>
         {
 
-                new Book
-                {
+                new() {
                     Id = 0,
                     Title = "1984",
                     Author = "George Orwell",
@@ -16,7 +15,7 @@ namespace DigitalLibrary.Data
                     PageCount = 268,
                     LaunchDate = new DateTime(1949, 6, 8)
                 },
-                new Book
+                new()
                 {
                     Id = 1,
                     Title = "Animal Farm",
@@ -25,7 +24,7 @@ namespace DigitalLibrary.Data
                     PageCount = 256,
                     LaunchDate = new DateTime(1945, 8, 17)
                 },
-                new Book
+                new()
                 {
                     Id = 2,
                     Title = "Atomic Habits",

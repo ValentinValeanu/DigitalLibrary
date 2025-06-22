@@ -1,20 +1,18 @@
-using DigitalLibrary.Models.DTOs;
+using DigitalLibrary.Data.Entities;
 using DigitalLibrary.Services.Interfaces;
+using DigitalLibrary.Services.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalLibrary.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/books")]
     public class BooksController : ControllerBase
     {
         private readonly IBooksService booksService;
 
-        private readonly ILogger<BooksController> logger;
-
-        public BooksController(ILogger<BooksController> logger, IBooksService booksService)
+        public BooksController(IBooksService booksService)
         {
-            this.logger = logger;
             this.booksService = booksService;
         }
 
@@ -35,15 +33,15 @@ namespace DigitalLibrary.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Book>> AddBook(BookInput book)
+        public async Task<ActionResult<Book>> CreateBook(BookInput book)
         {
-            var addedBook = await this.booksService.AddBookAsync(book);
+            var addedBook = await this.booksService.CreateBookAsync(book);
 
             return Ok(addedBook);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Book>> DeleteBook(int id)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateBook(int id, BookInput bookInput)
         {
             var book = await this.booksService.GetBookAsync(id);
 
@@ -52,9 +50,17 @@ namespace DigitalLibrary.API.Controllers
                 return NotFound();
             }
 
-            await this.booksService.DeleteBookAsync(book);
+            await this.booksService.UpdateBookAsync(id, bookInput);
 
             return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Book>> DeleteBook(int id)
+        {
+            var deletedEntriesCount = await this.booksService.DeleteBookAsync(id);
+
+            return deletedEntriesCount == 0 ? NotFound() : NoContent();
         }
     }
 }

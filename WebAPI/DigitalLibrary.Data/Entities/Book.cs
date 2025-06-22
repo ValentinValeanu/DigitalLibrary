@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DigitalLibrary.Models.DTOs
+﻿namespace DigitalLibrary.Data.Entities
 {
-    public record BookInput
+    public class Book
     {
+        public required int Id { get; set; }
+
         public required string Title { get; set; }
 
         public required string Author { get; set; }
@@ -22,7 +18,7 @@ namespace DigitalLibrary.Models.DTOs
 
         public string? TargetGroup { get; set; }
 
-        public List<Publisher> Publishers { get; set; }
+        public List<Publisher> Publishers { get; set; } = new List<Publisher>();
 
         public DateTime LaunchDate { get; set; }
     }

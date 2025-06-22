@@ -1,4 +1,5 @@
-﻿using DigitalLibrary.Models.DTOs;
+﻿using DigitalLibrary.Data.Entities;
+using DigitalLibrary.Services.Models;
 
 namespace DigitalLibrary.Services.Interfaces
 {
@@ -8,8 +9,10 @@ namespace DigitalLibrary.Services.Interfaces
 
         public Task<Book?> GetBookAsync(int id);
 
-        public Task<Book> AddBookAsync(BookInput book);
+        public Task<Book> CreateBookAsync(BookInput book);
 
-        public Task DeleteBookAsync(Book book);
+        public Task UpdateBookAsync(int id, BookInput book);
+
+        public Task<int> DeleteBookAsync(int id);
     }
 }

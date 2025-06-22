@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DigitalLibrary.Data\DigitalLibrary.Data.csproj" />
-    <ProjectReference Include="..\DigitalLibrary.Models\DigitalLibrary.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,15 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.API", "DigitalLibrary.API\DigitalLibrary.API.csproj", "{6055C66E-F951-4421-9553-C83FB1E849B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.Services", "DigitalLibrary.Services\DigitalLibrary.Services.csproj", "{D3F2E993-83B0-41B7-9D90-153EEC161D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.Models", "DigitalLibrary.Models\DigitalLibrary.Models.csproj", "{288EF49C-010B-401C-8A43-1525126D9B5E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalLibrary.Data", "DigitalLibrary.Data\DigitalLibrary.Data.csproj", "{B44B758C-F692-4460-81C0-D781094A0187}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A3E1B28-0393-4550-9146-51234B292600}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +28,6 @@ Global
 		{D3F2E993-83B0-41B7-9D90-153EEC161D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3F2E993-83B0-41B7-9D90-153EEC161D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3F2E993-83B0-41B7-9D90-153EEC161D27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{288EF49C-010B-401C-8A43-1525126D9B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{288EF49C-010B-401C-8A43-1525126D9B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{288EF49C-010B-401C-8A43-1525126D9B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{288EF49C-010B-401C-8A43-1525126D9B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B44B758C-F692-4460-81C0-D781094A0187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B44B758C-F692-4460-81C0-D781094A0187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B44B758C-F692-4460-81C0-D781094A0187}.Release|Any CPU.ActiveCfg = Release|Any CPU
